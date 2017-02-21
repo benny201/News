@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Input } from 'antd';
 
 import BodyChild from './bodyChild';
 import MixinLog from './Mixins';
@@ -52,6 +53,7 @@ export default class BodyIndex extends React.Component {
                 <h1>页面主题!!</h1>
                 <p>接收到的父页面的属性：{this.props.hi}</p>
                 <p>{this.state.username}</p>
+                <Input placeholder="Basic usage" />
                 <p>接受到的子页面的属性<input id="submitButton" ref="submitButton" type="button" value="Submit" onClick={this.changeInfo.bind(this)}/></p>
                 <BodyChild handleChange={this.handleChange.bind(this)}/>
             </div>

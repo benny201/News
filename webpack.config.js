@@ -6,7 +6,7 @@ module.exports = {
     // entry: "./js/index.js",
     entry: [
         'webpack-dev-server/client?http://localhost:8080/',
-        './js/index.js'
+        './js/root.js'
     ],
     module: {
         loaders: [{
@@ -16,7 +16,15 @@ module.exports = {
             query: {
                 presets: ['react', 'es2015']
             }
-        }]
+        },
+            {
+                test: /\.css$/,
+                //loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+                loader: 'style-loader!css-loader'
+
+            },
+
+        ],
     },
     output: {
         path: __dirname + "/src/",
