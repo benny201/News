@@ -3,7 +3,11 @@ var path = require('path')
 
 module.exports = {
     context: __dirname + '/src',
-    entry: "./js/index.js",
+    // entry: "./js/index.js",
+    entry: [
+        'webpack-dev-server/client?http://localhost:8080/',
+        './js/index.js'
+    ],
     module: {
         loaders: [{
             test: /\.js?$/,

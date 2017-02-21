@@ -13,11 +13,13 @@ class Index extends React.Component {
         console.log("index-did-count");
     }
 
+
+
     render() {
         return (
             <div>
                 <ComponentHeader/>
-                <BodyIndex/>
+                <BodyIndex hi = {"fuck you react.js"}/>
                 <ComponentFooter/>
             </div>
         )
