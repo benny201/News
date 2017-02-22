@@ -1,0 +1,23 @@
+.logo {
+    align-items: center;
+    display: inline-flex;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+}
+
+.logo span {
+    font-size: 30px;
+    padding-left: 5px;
+}
+
+#pc_header {
+    text-align: center;
+    font-size: 13px !important;
+}
+
+.footer {
+    text-align: center;
+}
