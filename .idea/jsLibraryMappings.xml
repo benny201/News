@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{node-DefinitelyTyped, react-DefinitelyTyped, react-bootstrap-DefinitelyTyped, react-dom-DefinitelyTyped, react-mixin-DefinitelyTyped, react-responsive-DefinitelyTyped, react-router-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{antd-DefinitelyTyped, node-DefinitelyTyped, react-DefinitelyTyped, react-bootstrap-DefinitelyTyped, react-dom-DefinitelyTyped, react-mixin-DefinitelyTyped, react-responsive-DefinitelyTyped, react-router-DefinitelyTyped}" />
     <includedPredefinedLibrary name="ECMAScript 6" />
   </component>
 </project>

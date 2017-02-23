@@ -15,5 +15,6 @@
     <orderEntry type="library" name="react-bootstrap-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="react-router-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="react-responsive-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="antd-DefinitelyTyped" level="application" />
   </component>
 </module>
