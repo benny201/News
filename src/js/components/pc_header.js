@@ -22,6 +22,17 @@ class PCHeader extends React.Component {
         }
     }
 
+    //before mount
+    componentWillMount() {
+        if (localStorage.userId != '') {
+            this.setState({
+                hasLogin: true,
+                userNickName: localStorage.userNickName,
+                userId: localStorage.userId,
+            });
+        }
+    }
+
     // functions for modals
     showModal() {
         this.setState({
@@ -63,14 +74,29 @@ class PCHeader extends React.Component {
         let formData = this.props.form.getFieldsValue();
         console.log(formData);
 
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register"
-            + "&username=" + formData.userName + "&password="+ formData.password +"&r_userName=" + formData.r_userName + "&r_password="
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
+            + "&username="+formData.userName+"&password="+formData.password
+            +"&r_userName=" + formData.register_name + "&r_password="
             + formData.register_password + "&r_confirmPassword="
-            + formData.register_repassword, fetchOptions).then(response => response.json()).then(json => {
-            this.setState({userNickName: json.NickUserName, userid: json.UserId});
+            + formData.register_repassword, fetchOptions)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({userNickName: '欢迎: '+json.NickUserName, userId: json.UserId});
+                localStorage.userId= json.UserId;
+                localStorage.userNickName = '欢迎: ' + json.NickUserName;
+            });
+
+        // fetch("http://newsapi.gugujiankong.com/Handler.ashx?"+ this.state.action
+        //     + "&username=" + formData.userName + "&password="+ formData.password +"&r_userName=" + formData.r_userName + "&r_password="
+        //     + formData.register_password + "&r_confirmPassword="
+        //     + formData.register_repassword, fetchOptions).then(response => response.json()).then(json => {
+        //     this.setState({userNickName: json.NickUserName, userid: json.UserId});
+        //     console.log(json.NickUserName);
             // localStorage.userid= json.UserId;
             // localStorage.userNickName = json.NickUserName;
-        });
+        // });
+
+        // console.log(this.state.userNickName);
 
         if (this.state.action == "login") {
             this.setState({hasLogin: true});
@@ -92,18 +118,24 @@ class PCHeader extends React.Component {
         }
     };
 
+    logout () {
+        localStorage.userId= '';
+        localStorage.userNickName = '';
+        this.setState({hasLogin: false});
+    }
+
 
     render() {
         let {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogin ?
                 <Menu.Item key="login" className="register">
-                    <Button type="primary">{this.state.userNickName} </Button>
-                    &nbsp;&nbsp;
-                    <Link target="_blank" >
+                    <Button type="dashed">{this.state.userNickName} </Button>
+
+                    <Link target="_blank" className="register clearfix">
                         <Button type="primary" htmlType="button">个人中心</Button>
                     </Link>
-                    &nbsp;&nbsp;
-                    <Button type="primary" htmlType="button">登出</Button>
+
+                    <Button type="danger" htmlType="button" onClick={this.logout.bind(this)}>登出</Button>
                 </Menu.Item>
                 :
                 <Menu.Item key="register" className="register">

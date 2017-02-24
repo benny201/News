@@ -39,3 +39,19 @@
 .clearfix:after {
     clear:both;
 }
+
+.container {
+    padding-top: 10px;
+}
+
+.leftContainer {
+    width: 400px;
+    float:left;
+}
+
+.carousel {
+    width: 400px;
+    float: left;
+}
+.tabs_news {
+}

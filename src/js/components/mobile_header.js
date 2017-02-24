@@ -65,16 +65,17 @@ class MobileHeader extends React.Component {
         let formData = this.props.form.getFieldsValue();
         console.log(formData);
 
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register"
-            + "&username=userName&password=password&r_userName=" + formData.r_userName + "&r_password="
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
+            + "&username="+formData.userName+"&password="+formData.password
+            +"&r_userName=" + formData.register_name + "&r_password="
             + formData.register_password + "&r_confirmPassword="
-            + formData.register_repassword, fetchOptions).
-        then(response => response.json()).
-        then(json => {
-            this.setState({userNickName: json.NickUserName, userid: json.UserId});
-            // localStorage.userid= json.UserId;
-            // localStorage.userNickName = json.NickUserName;
-        });
+            + formData.register_repassword, fetchOptions)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({userNickName: '欢迎: '+json.NickUserName, userId: json.UserId});
+                localStorage.userId= json.UserId;
+                localStorage.userNickName = json.NickUserName;
+            });
 
 
         message.success("Succeed to register!");
@@ -83,7 +84,21 @@ class MobileHeader extends React.Component {
             visible: false,
         });
 
+        if (this.state.action == "login") {
+            this.setState({hasLogin: true});
+        }
+
     }
+
+
+
+    callback(key) {
+        if (key == 1) {
+            this.setState({action: 'login'});
+        } else if (key == 2){
+            this.setState({action: "register"});
+        }
+    };
 
 
     login() {
@@ -121,8 +136,42 @@ class MobileHeader extends React.Component {
                        onCancel={this.handleCancel.bind(this)}
                        wrapClassName="vertical-center-modal">
 
-                    <Tabs type="card">
-                        <TabPane tab="注册" key="1">
+
+
+
+
+                    <Tabs type="card"  onChange={this.callback.bind(this)}>
+
+                        <TabPane tab="登录" key="1">
+                            <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
+                                <FormItem label="账户">
+                                    {getFieldDecorator('userName', {
+                                        rules: [{required: true, message: 'Please input your Username!'}],
+                                    })(
+                                        <Input addonBefore={<Icon type="user"/>} type="password"
+                                               placeholder="Username"/>
+                                    )}
+
+                                </FormItem>
+                                <FormItem label="密码">
+                                    {getFieldDecorator('password', {
+                                        rules: [{required: true, message: 'Please input your Username!'}],
+                                    })(
+                                        <Input addonBefore={<Icon type="lock"/>} type="password"
+                                               placeholder="Password"/>
+                                    )}
+
+                                </FormItem>
+                                <Button type="primary" htmlType="submit">登录</Button>
+                            </Form>
+
+
+                        </TabPane>
+
+
+
+
+                        <TabPane tab="注册" key="2">
                             <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
                                 <FormItem label="账户">
                                     {/*<Input addonBefore={<Icon type="user" />} placeholder="Username"*/}
