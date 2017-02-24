@@ -46,7 +46,7 @@ export default class PCNewsBlock extends React.Component {
 
 
         return (
-            <div className="topNewsList">
+            <div className="topNewsList clearfix">
                 <Card>
                     <ul>
                         {newsList}

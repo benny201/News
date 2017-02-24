@@ -42,7 +42,7 @@ export default class PCContainer extends React.Component{
                             </div>
                         </div>
 
-                        <Tabs className="tabs_news">
+                        <Tabs className="tabs_news clearfix">
                             <TabPane key="1" tab="新闻">
                                 <PCNewsBlock count={22} type="top" width="100%" bordered="false"/>
                             </TabPane>
