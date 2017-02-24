@@ -1,6 +1,8 @@
 import React from 'react';
 import {Row, Col} from 'antd';
+import { Router, Route, Link } from 'react-router'
 import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'antd';
+import 'whatwg-fetch'
 var headerCss = require('../../css/pc.css');
 
 const FormItem = Form.Item;
@@ -20,7 +22,7 @@ class PCHeader extends React.Component {
         }
     }
 
-    // functions for models
+    // functions for modals
     showModal() {
         this.setState({
             visible: true,
@@ -42,7 +44,7 @@ class PCHeader extends React.Component {
         });
     };
 
-    handleClick (e) {
+    handleClick(e) {
         if (e.key == "register") {
             this.setState({current: 'register', visible: true});
         } else {
@@ -51,24 +53,60 @@ class PCHeader extends React.Component {
     }
 
     handleSubmit(e) {
-        
+        //log bubbling
+        e.preventDefault();
+
+        let fetchOptions = {
+            method: 'GET'
+        };
+
+        let formData = this.props.form.getFieldsValue();
+        console.log(formData);
+
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=register"
+            + "&username=" + formData.userName + "&password="+ formData.password +"&r_userName=" + formData.r_userName + "&r_password="
+            + formData.register_password + "&r_confirmPassword="
+            + formData.register_repassword, fetchOptions).then(response => response.json()).then(json => {
+            this.setState({userNickName: json.NickUserName, userid: json.UserId});
+            // localStorage.userid= json.UserId;
+            // localStorage.userNickName = json.NickUserName;
+        });
+
+        if (this.state.action == "login") {
+            this.setState({hasLogin: true});
+        }
+
+
+        message.success("yes!");
+
+        this.setState({
+            visible: false,
+        });
     }
+
+    callback(key) {
+        if (key == 1) {
+            this.setState({action: 'login'});
+        } else {
+            this.setState({action: "register"});
+        }
+    };
 
 
     render() {
-        const {getFieldDecorator} = this.props.form;
+        let {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogin ?
-                <Menu.Item key="logout" class="register">
-                    <Button type="primary">{this.state.userNickName}</Button>
+                <Menu.Item key="login" className="register">
+                    <Button type="primary">{this.state.userNickName} </Button>
                     &nbsp;&nbsp;
-                    <Link target="_blank">
+                    <Link target="_blank" >
                         <Button type="primary" htmlType="button">个人中心</Button>
                     </Link>
                     &nbsp;&nbsp;
                     <Button type="primary" htmlType="button">登出</Button>
                 </Menu.Item>
                 :
-                <Menu.Item key="register" class="register">
+                <Menu.Item key="register" className="register">
                     <Icon type="appstore"/>注册/登录
                 </Menu.Item>
             ;
@@ -76,7 +114,7 @@ class PCHeader extends React.Component {
         return (
             <header className={headerCss.header} id="pc_header">
                 <Row>
-                    <Col span={2}>1111</Col>
+                    <Col span={2}></Col>
                     <Col span={4}>
                         <a href="/" className="logo">
                             <img src="./src/images/news1.png" alt="here's the logo"/>
@@ -84,7 +122,8 @@ class PCHeader extends React.Component {
                         </a>
                     </Col>
                     <Col span={16}>
-                        <Menu mode="horizontal" onClick={this.handleClick.bind(this)} selectedKeys={[this.state.current]}>
+                        <Menu mode="horizontal" onClick={this.handleClick.bind(this)}
+                              selectedKeys={[this.state.current]}>
                             <Menu.Item key="top">
                                 <Icon type="appstore"/>头条
                             </Menu.Item>
@@ -119,36 +158,85 @@ class PCHeader extends React.Component {
                             {userShow}
                         </Menu>
 
-                        <Button type="primary" onClick={this.showModal.bind(this)}></Button>
+
                         <Modal title="用户中心" visible={this.state.visible}
                                onOk={this.handleOk.bind(this)}
                                onCancel={this.handleCancel.bind(this)}
                                wrapClassName="vertical-center-modal">
 
-                            <Tabs type="line">
-                                <TabPane tab="注册" key="1">
+                            <Tabs type="card" onChange={this.callback.bind(this)}>
+
+                                <TabPane tab="登录" key="1">
                                     <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
                                         <FormItem label="账户">
-                                            <Input addonBefore={<Icon type="user" />} placeholder="Username"
-                                                   {...getFieldDecorator('register_name')}/>
+                                            {getFieldDecorator('userName', {
+                                                rules: [{required: true, message: 'Please input your Username!'}],
+                                            })(
+                                                <Input addonBefore={<Icon type="user"/>} type="password"
+                                                       placeholder="Username"/>
+                                            )}
+
                                         </FormItem>
                                         <FormItem label="密码">
-                                            <Input addonBefore={<Icon type="lock" />} type="password" placeholder="Password"
-                                                   {...getFieldDecorator('register_password')}/>
+                                            {getFieldDecorator('password', {
+                                                rules: [{required: true, message: 'Please input your Username!'}],
+                                            })(
+                                                <Input addonBefore={<Icon type="lock"/>} type="password"
+                                                       placeholder="Password"/>
+                                            )}
+
                                         </FormItem>
-                                        <FormItem label="再次输入密码">
-                                            <Input addonBefore={<Icon type="lock" />} type="password" placeholder="Password"
-                                                   {...getFieldDecorator('register_repassword')}/>
-                                        </FormItem>
+                                        <Button type="primary" htmlType="submit">登录</Button>
                                     </Form>
-                                    <Button type="primary" htmlType="submit">注册</Button>
+
+
+                                </TabPane>
+
+
+                                <TabPane tab="注册" key="2">
+                                    <Form horizontal onSubmit={this.handleSubmit.bind(this)}>
+                                        <FormItem label="账户">
+                                            {/*<Input addonBefore={<Icon type="user" />} placeholder="Username"*/}
+                                            {/*{...getFieldDecorator('register_name')}/>*/}
+
+                                            {getFieldDecorator('register_name', {
+                                                rules: [{required: true, message: 'Please input your Username!'}],
+                                            })(
+                                                <Input addonBefore={<Icon type="user"/>} type="password"
+                                                       placeholder="Username"/>
+                                            )}
+                                        </FormItem>
+                                        <FormItem label="密码">
+                                            {/*<Input addonBefore={<Icon type="lock" />} type="password" placeholder="Password"*/}
+                                            {/*{...getFieldDecorator('register_password')}/>*/}
+
+                                            {getFieldDecorator('register_password', {
+                                                rules: [{required: true, message: 'Please input your Password!'}],
+                                            })(
+                                                <Input addonBefore={<Icon type="lock"/>} type="password"
+                                                       placeholder="Password"/>
+                                            )}
+                                        </FormItem>
+
+                                        <FormItem label="再次输入密码">
+                                            {/*<Input addonBefore={<Icon type="lock" />} type="password" placeholder="Password"*/}
+                                            {/*{...getFieldDecorator('register_repassword')}/>*/}
+
+                                            {getFieldDecorator('register_repassword', {
+                                                rules: [{required: true, message: 'Please input your Password again!'}],
+                                            })(
+                                                <Input addonBefore={<Icon type="lock"/>} type="password"
+                                                       placeholder="Password again"/>
+                                            )}
+                                        </FormItem>
+                                        <Button type="primary" htmlType="submit">注册</Button>
+                                    </Form>
                                 </TabPane>
                             </Tabs>
-
                         </Modal>
 
                     </Col>
-                    <Col span={2}>1111</Col>
+                    <Col span={2}></Col>
                 </Row>
             </header>
 

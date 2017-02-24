@@ -21,3 +21,21 @@
 .footer {
     text-align: center;
 }
+
+/*.register button {*/
+    /*height: 10px;*/
+/*}*/
+
+.register {
+    float: right !important;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content:  " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear:both;
+}
