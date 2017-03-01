@@ -3,6 +3,7 @@ import {Row, Col} from 'antd';
 import PCHeader from './pc_header';
 import PCFooter from './pc_footer';
 import PCImagesBlock from './pc_images_block';
+import Comment from './comment';
 import { BackTop } from 'antd';
 
 
@@ -44,6 +45,8 @@ export default class PCDetail extends React.Component {
                     <Col span={2}></Col>
                     <Col span={14} className="container">
                         <div class="articleContainer" dangerouslySetInnerHTML={this.createMarkup()}></div>
+                        <hr/>
+                        <Comment uniquekey={this.props.params.uniquekey}/>
                     </Col>
                     <Col span={6} offset={1}>
                         <PCImagesBlock count={42} type="top" width="400px"  imagesWidth="106px"/>

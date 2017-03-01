@@ -153,7 +153,7 @@ class PCHeader extends React.Component {
                             <span>BennyNews</span>
                         </a>
                     </Col>
-                    <Col span={16}>
+                    <Col span={17}>
                         <Menu mode="horizontal" onClick={this.handleClick.bind(this)}
                               selectedKeys={[this.state.current]}>
                             <Menu.Item key="top">
@@ -268,7 +268,7 @@ class PCHeader extends React.Component {
                         </Modal>
 
                     </Col>
-                    <Col span={2}></Col>
+                    <Col span={1}></Col>
                 </Row>
             </header>
 

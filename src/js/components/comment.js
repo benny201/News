@@ -34,7 +34,19 @@ class Comment extends React.Component {
 
     };
 
-    handleSubmit() {
+    handleSubmit(e) {
+        e.preventDefault();
+        let fecthOption = {
+            method: 'GET'
+        };
+
+        let formdata = this.props.form.getFieldsValue();
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=comment&userid=" + localStorage.userId + "&uniquekey=" + this.props.uniquekey + "&commnet=" + formdata.remark, fecthOption).
+        then(response => response.json()).
+        then(json => {
+            this.componentDidMount();
+        });
+
 
     };
 
@@ -55,16 +67,17 @@ class Comment extends React.Component {
             <div className="comment">
                 <Row>
                     <Col span={24}>
+                        <hr/>
                         {commentList}
                         <Form onSubmit={this.handleSubmit.bind(this)}>
                             <FormItem label="您的评论">
-                                {getFieldDecorator('register_name', {
-                                    rules: [{required: true, message: '输入评论'}],
+                                {getFieldDecorator('remark', {
+                                    rules: [{required: false, message: '输入评论!'}],
                                 })(
                                     <Input  type="textarea" placeholder="输入评论"/>
                                 )}
-                                <Button type="primary" htmlType="submit">提交评论</Button>
                             </FormItem>
+                            <Button type="primary" htmlType="submit">提交评论</Button>
                         </Form>
 
                     </Col>
