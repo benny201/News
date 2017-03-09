@@ -13,6 +13,8 @@ import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'a
 import PCNewsBlock from './pc_news_block';
 //news images
 import PCImagesBlock from './pc_images_block';
+//product
+import PCProduct from './pc_product';
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -56,6 +58,12 @@ export default class PCContainer extends React.Component{
                                 <PCNewsBlock count={31} type="keji" width="100%" bordered="false"/>
                             </TabPane>
                         </Tabs>
+
+                        　<Tabs>
+                             <TabPane tab="产品">
+                                 <PCProduct/>
+                             </TabPane>
+                         </Tabs>
 
 
                         <div>
