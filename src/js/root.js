@@ -9,7 +9,8 @@ import PCIndex from './components/pc_index';
 import MobileIndex from './components/mobile_index';
 import PCDetail from './components/pc_detail';
 import MobileDetail from './components/mobile_detail';
-
+import PCUserCenter from './components/pc_usercenter';
+import MoblieUserCenter from './components/moblie_usercenter';
 import {Router, Route, hashHistory} from 'react-router';
 
 export default class Root extends React.Component {
@@ -20,12 +21,14 @@ export default class Root extends React.Component {
                     <Router history={hashHistory}>
                         <Route path="/" component={PCIndex}></Route>
                         <Route path="/details/:uniquekey" component={PCDetail}></Route>
+                        <Route path="/usercenter" component={PCUserCenter}></Route>
                     </Router>
                 </MediaQuery>
                 <MediaQuery query='(max-device-width: 1224px)'>
                     <Router history={hashHistory}>
                         <Route path="/" component={MobileIndex}></Route>
                         <Route path="/details/:uniquekey" component={MobileDetail}></Route>
+                        <Route path="/usercenter" component={MoblieUserCenter}/>
                     </Router>
                 </MediaQuery>
 

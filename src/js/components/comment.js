@@ -4,8 +4,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import {Row, Col} from 'antd';
-import { Router, Route, Link } from 'react-router';
-import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'antd';
+import { Tabs,Input, Form, Button,notification} from 'antd';
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -50,6 +49,20 @@ class Comment extends React.Component {
 
     };
 
+    collect() {
+        let fetchOption = {
+            method: 'GET'
+        };
+
+        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=uc&userid=" + localStorage.userId + "&uniquekey=" + this.props.uniquekey, fetchOption).
+        then(response => response.json()).
+        then(json => {
+            //收藏成功以后进行一下全局的提醒
+            notification['success']({message: '提醒', description: '收藏此文章成功'});
+        });
+
+    }
+
 
     render () {
 
@@ -78,6 +91,8 @@ class Comment extends React.Component {
                                 )}
                             </FormItem>
                             <Button type="primary" htmlType="submit">提交评论</Button>
+                            &nbsp;&nbsp;
+                            <Button type="primary" htmlType="button" onClick={this.collect.bind(this)}>收藏</Button>
                         </Form>
 
                     </Col>

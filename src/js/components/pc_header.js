@@ -131,7 +131,7 @@ class PCHeader extends React.Component {
                 <Menu.Item key="login" className="register">
                     <Button type="dashed">{this.state.userNickName} </Button>
 
-                    <Link target="_blank" className="register clearfix">
+                    <Link target="_blank" className="register clearfix" to={'/usercenter'}>
                         <Button type="primary" htmlType="button">个人中心</Button>
                     </Link>
 
