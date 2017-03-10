@@ -34,6 +34,7 @@ module.exports = {
     },
     output: {
         path: __dirname + "/src/",
+        publicPath:'https://benny201.github.io/News/',
         filename: "bundle.js"
     }
 };

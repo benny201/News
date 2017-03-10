@@ -137,18 +137,18 @@ class PCHeader extends React.Component {
         return (
             <header className={headerCss.header} id="pc_header">
                 <Row>
-                    <Col span={5}></Col>
-                    <Col span={14}>
+                    <Col span={3}></Col>
+                    <Col span={18}>
                         <a href="/" className="logo">
                             {/*<img src="./src/images/news1.png" alt="here's the logo"/>*/}
                             <span>Benny's Site</span>
                         </a>
                     </Col>
-                    <Col span={5}></Col>
+                    <Col span={3}></Col>
                 </Row>
                 <Row>
-                    <Col span={6}></Col>
-                    <Col span={12}>
+                    <Col span={4}></Col>
+                    <Col span={16}>
                         <Menu mode="horizontal" theme="dark"
                               onClick={this.handleClick.bind(this)}
                               selectedKeys={[this.state.current]}
@@ -166,7 +166,7 @@ class PCHeader extends React.Component {
                             </Menu.Item>
                             <Menu.Item key="react">
                                 <Link>
-                                    <Icon type="global" />React
+                                    <Icon type="global"/>React
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="nba">
@@ -261,7 +261,7 @@ class PCHeader extends React.Component {
                         </Modal>
 
                     </Col>
-                    <Col span={6}></Col>
+                    <Col span={4}></Col>
                 </Row>
             </header>
 
