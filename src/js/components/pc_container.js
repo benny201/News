@@ -32,6 +32,18 @@ export default class PCContainer extends React.Component{
         return(
             <div>
                 <Row>
+                    <Col span={5}></Col>
+                    <Col span={14}>
+                                <Carousel autoplay>
+                                    <div><img src="./src/images/james.jpg" alt="photo1"/></div>
+                                    <div><img src="./src/images/huston.jpg" alt="photo1"/></div>
+                                    <div><img src="./src/images/lilard.jpg" alt="photo1"/></div>
+                                    <div><img src="./src/images/jordan.jpg" alt="photo1"/></div>
+                                </Carousel>
+                    </Col>
+                    <Col span={5}></Col>
+                </Row>
+                <Row>
                     <Col span={2}></Col>
                     <Col span={20} className="container">
                         <div className="leftContainer">
@@ -60,7 +72,7 @@ export default class PCContainer extends React.Component{
                         </Tabs>
 
                         　<Tabs>
-                             <TabPane tab="产品">
+                             <TabPane tab="产品" key="4">
                                  <PCProduct/>
                              </TabPane>
                          </Tabs>

@@ -4,6 +4,7 @@ import { Router, Route, Link } from 'react-router'
 import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'antd';
 import 'whatwg-fetch'
 var headerCss = require('../../css/pc.css');
+// var Bmob = require('../../js/bmob/bmob.js');
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -74,6 +75,8 @@ class PCHeader extends React.Component {
         let formData = this.props.form.getFieldsValue();
         console.log(formData);
 
+
+
         fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=" + this.state.action
             + "&username="+formData.userName+"&password="+formData.password
             +"&r_userName=" + formData.register_name + "&r_password="
@@ -85,18 +88,6 @@ class PCHeader extends React.Component {
                 localStorage.userId= json.UserId;
                 localStorage.userNickName = '欢迎: ' + json.NickUserName;
             });
-
-        // fetch("http://newsapi.gugujiankong.com/Handler.ashx?"+ this.state.action
-        //     + "&username=" + formData.userName + "&password="+ formData.password +"&r_userName=" + formData.r_userName + "&r_password="
-        //     + formData.register_password + "&r_confirmPassword="
-        //     + formData.register_repassword, fetchOptions).then(response => response.json()).then(json => {
-        //     this.setState({userNickName: json.NickUserName, userid: json.UserId});
-        //     console.log(json.NickUserName);
-            // localStorage.userid= json.UserId;
-            // localStorage.userNickName = json.NickUserName;
-        // });
-
-        // console.log(this.state.userNickName);
 
         if (this.state.action == "login") {
             this.setState({hasLogin: true});
@@ -139,54 +130,56 @@ class PCHeader extends React.Component {
                 </Menu.Item>
                 :
                 <Menu.Item key="register" className="register">
-                    <Icon type="appstore"/>注册/登录
+                    <Icon type="select" />注册/登录
                 </Menu.Item>
             ;
 
         return (
             <header className={headerCss.header} id="pc_header">
                 <Row>
-                    <Col span={2}></Col>
-                    <Col span={4}>
+                    <Col span={5}></Col>
+                    <Col span={14}>
                         <a href="/" className="logo">
-                            <img src="./src/images/news1.png" alt="here's the logo"/>
-                            <span>BennyNews</span>
+                            {/*<img src="./src/images/news1.png" alt="here's the logo"/>*/}
+                            <span>Benny's Site</span>
                         </a>
                     </Col>
-                    <Col span={17}>
-                        <Menu mode="horizontal" onClick={this.handleClick.bind(this)}
-                              selectedKeys={[this.state.current]}>
+                    <Col span={5}></Col>
+                </Row>
+                <Row>
+                    <Col span={6}></Col>
+                    <Col span={12}>
+                        <Menu mode="horizontal" theme="dark"
+                              onClick={this.handleClick.bind(this)}
+                              selectedKeys={[this.state.current]}
+                              className="menu-color"
+                        >
                             <Menu.Item key="top">
-                                <Icon type="appstore"/>头条
+                                <Link to={'/'}>
+                                    <Icon type="play-circle" />新闻
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="frontend">
+                                <Link>
+                                    <Icon type="like" />前端
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="react">
+                                <Link>
+                                    <Icon type="global" />React
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="nba">
+                                <Link>
+                                    <Icon type="smile-o" />NBA
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="blog">
+                                <a href="https://github.com/benny201">
+                                    <Icon type="github" />博客
+                                </a>
                             </Menu.Item>
 
-                            <Menu.Item key="sports">
-                                <Icon type="appstore"/>体育
-                            </Menu.Item>
-
-                            <Menu.Item key="techs">
-                                <Icon type="appstore"/>科技
-                            </Menu.Item>
-
-                            <Menu.Item key="international">
-                                <Icon type="appstore"/>国际
-                            </Menu.Item>
-
-                            <Menu.Item key="china">
-                                <Icon type="appstore"/>国内
-                            </Menu.Item>
-
-                            <Menu.Item key="fashion">
-                                <Icon type="appstore"/>时尚
-                            </Menu.Item>
-
-                            <Menu.Item key="entertainment">
-                                <Icon type="appstore"/>娱乐
-                            </Menu.Item>
-
-                            <Menu.Item key="military">
-                                <Icon type="appstore"/>军事
-                            </Menu.Item>
                             {userShow}
                         </Menu>
 
@@ -268,7 +261,7 @@ class PCHeader extends React.Component {
                         </Modal>
 
                     </Col>
-                    <Col span={1}></Col>
+                    <Col span={6}></Col>
                 </Row>
             </header>
 

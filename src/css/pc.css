@@ -18,6 +18,14 @@
     /*font-size: 13px !important;*/
 /*}*/
 
+#pc_header {
+    background-color: #515A5A;
+}
+
+.menu-color {
+    background-color: #515A5A !important;
+}
+
 .footer {
     text-align: center;
 }
