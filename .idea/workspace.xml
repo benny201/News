@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52e9b788-36bb-4f06-948c-35bd96dbe737" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bundle.js" afterPath="$PROJECT_DIR$/src/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/components/pc_footer.js" afterPath="$PROJECT_DIR$/src/js/components/pc_footer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/components/pc_header.js" afterPath="$PROJECT_DIR$/src/js/components/pc_header.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -58,20 +55,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+            <state relative-caret-position="648">
+              <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pc_header.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pc_header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="-1114">
               <caret line="168" column="55" lean-forward="false" selection-start-line="168" selection-start-column="55" selection-end-line="168" selection-end-column="55" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -84,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/js/components/pc_weather.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+              <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -209,8 +206,8 @@
         <option value="$PROJECT_DIR$/src/js/components/pc_container.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_footer.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_weather.js" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_header.js" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -465,12 +462,12 @@
       <workItem from="1488230464935" duration="716000" />
       <workItem from="1488598017262" duration="97000" />
       <workItem from="1488749279439" duration="2430000" />
-      <workItem from="1489043049030" duration="20980000" />
+      <workItem from="1489043049030" duration="21258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127046000" />
+    <option name="totallyTimeSpent" value="127324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
@@ -802,26 +799,26 @@
     <entry file="file://$PROJECT_DIR$/src/js/components/pc_weather.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
+        <state relative-caret-position="-1114">
           <caret line="168" column="55" lean-forward="false" selection-start-line="168" selection-start-column="55" selection-end-line="168" selection-end-column="55" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="29" lean-forward="true" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

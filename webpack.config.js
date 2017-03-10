@@ -7,7 +7,6 @@ module.exports = {
     context: __dirname + '/src',
     // entry: "./js/index.js",
     entry: [
-        'webpack-dev-server/client?http://localhost:8080/',
         './js/root.js'
     ],
     module: {
@@ -34,7 +33,7 @@ module.exports = {
     },
     output: {
         path: __dirname + "/src/",
-        publicPath:'https://benny201.github.io/News/',
+        publicPath:"https://benny201.github.io/News/",
         filename: "bundle.js"
     }
 };
