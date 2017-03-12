@@ -160,23 +160,24 @@ class PCHeader extends React.Component {
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="frontend">
-                                <Link>
-                                    <Icon type="like" />前端
+                                <Link to={'/mypage'}>
+                                    <Icon type="like" />个人
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="react">
-                                <Link>
+                                <a href="http://react-china.org">
                                     <Icon type="star-o" />React
-                                </Link>
+                                </a>
                             </Menu.Item>
                             <Menu.Item key="nba">
                                 <Link>
                                     <Icon type="smile-o" />NBA
                                 </Link>
                             </Menu.Item>
+
                             <Menu.Item key="blog">
                                 <a href="https://github.com/benny201">
-                                    <Icon type="github" />博客
+                                    <Icon type="github" />Github
                                 </a>
                             </Menu.Item>
 

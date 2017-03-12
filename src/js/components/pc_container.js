@@ -69,8 +69,8 @@ export default class PCContainer extends React.Component{
 
 
                         <div>
-                            <PCImagesBlock count={16} type="guonei" width="100%" cardTitle="国内头条" imagesWidth="122px"/>
-                            <PCImagesBlock count={16} type="yule" width="100%" cardTitle="娱乐" imagesWidth="122px"/>
+                            <PCImagesBlock count="16" type="guonei" width="100%" cardTitle="国内头条" imagesWidth="122px"/>
+                            <PCImagesBlock count="16" type="yule" width="100%" cardTitle="娱乐" imagesWidth="122px"/>
                         </div>
                     </Col>
                     <Col span={2}></Col>

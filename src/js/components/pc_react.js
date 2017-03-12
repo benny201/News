@@ -50,7 +50,7 @@ export default class PCReactBlock extends React.Component {
                 <Card title={this.props.cardTitle}>
                     <ul>
                         <li>
-                            <a href="http://react-china.org/t/react-redux/9072/2">分享一个 react + redux 完整的项目，同时写一下个</a>
+                            <a href="http://react-china.org/t/react-redux/9072/2">分享一个 react + redux 完整的项目，同时写一下个111111111111</a>
                         </li>
                         <li>
                             <a href="http://react-china.org/t/react-redux/9072/2">分享一个 react + redux 完整的项目，同时写一下个</a>

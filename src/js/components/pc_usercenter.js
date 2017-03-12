@@ -68,28 +68,28 @@ export default class PCUserCenter extends React.Component {
                 </Card>
             ))
             :
-            '您还没有发表过任何评论。';
+            '您还没有发表过任何评论.';
 
 
-        const props = {
-            action: 'http://newsapi.gugujiankong.com/handler.ashx',
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            },
-            listType: 'picture-card',
-            defaultFileList: [
-                {
-                    uid: -1,
-                    name: 'xxx.png',
-                    state: 'done',
-                    url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
-                    thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
-                }
-            ],
-            onPreview: (file) => {
-                this.setState({previewImage: file.url, previewVisible: true});
-            }
-        };
+        {/*const props = {*/}
+            {/*action: 'http://newsapi.gugujiankong.com/handler.ashx',*/}
+            {/*headers: {*/}
+                {/*"Access-Control-Allow-Origin": "*"*/}
+            {/*},*/}
+            {/*listType: 'picture-card',*/}
+            {/*defaultFileList: [*/}
+                {/*{*/}
+        //             uid: -1,
+        //             name: 'xxx.png',
+        //             state: 'done',
+        //             url: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png',
+        //             thumbUrl: 'https://os.alipayobjects.com/rmsportal/NDbkJhpzmLxtPhB.png'
+        //         }
+        //     ],
+        //     onPreview: (file) => {
+        //         this.setState({previewImage: file.url, previewVisible: true});
+        //     }
+        // };
 
         return (
 
