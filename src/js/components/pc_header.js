@@ -137,14 +137,14 @@ class PCHeader extends React.Component {
         return (
             <header className={headerCss.header} id="pc_header">
                 <Row>
-                    <Col span={3}></Col>
-                    <Col span={18}>
+                    <Col span={2}></Col>
+                    <Col span={20}>
                         <a href="/" className="logo">
                             {/*<img src="./src/images/news1.png" alt="here's the logo"/>*/}
                             <span>Benny's Site</span>
                         </a>
                     </Col>
-                    <Col span={3}></Col>
+                    <Col span={2}></Col>
                 </Row>
                 <Row>
                     <Col span={4}></Col>
@@ -156,7 +156,7 @@ class PCHeader extends React.Component {
                         >
                             <Menu.Item key="top">
                                 <Link to={'/'}>
-                                    <Icon type="play-circle" />新闻
+                                    <Icon type="play-circle" />首页
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="frontend">
@@ -166,7 +166,7 @@ class PCHeader extends React.Component {
                             </Menu.Item>
                             <Menu.Item key="react">
                                 <Link>
-                                    <Icon type="global"/>React
+                                    <Icon type="star-o" />React
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="nba">

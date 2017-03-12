@@ -1,3 +1,7 @@
+body {
+    background-image: url("http://file06.16sucai.com/2016/0825/0d40350bfe9dc80c2231e554016ca905.jpg");
+}
+
 .logo {
     align-items: center;
     display: inline-flex;
@@ -28,6 +32,7 @@
 
 .footer {
     text-align: center;
+    color:white;
 }
 
 /*.register button {*/
@@ -72,19 +77,53 @@
 .topNewsList {
     float: left;
     text-align: left;
-    font-size: 14px;
-    margin-bottom: 10px;
-    margin-top: 15px;
+    font-size: 10px;
+    margin-left: 10px;
+    /*width: 300px;*/
+    /*margin-top: 15px;*/
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+.react {
+    float: left;
+    text-align: left;
+    font-size: 10px;
+    margin-left: 10px;
+    /*display: inline;*/
+    /*width: 100%;*/
+    /*margin-top: 15px;*/
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.react li a {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #666 !important;
+}
+
 
 .topNewsList a {
     line-height: 22px !important;
     color: #666 !important;
+
+}
+
+.topBlockList {
+    float: left;
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+
 }
 
 .tabs_news {
     padding-left: 10px;
-    width: 460px;
+    width: 300px;
     float: left;
     margin-bottom: 1px !important;
 }

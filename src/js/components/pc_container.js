@@ -15,6 +15,8 @@ import PCNewsBlock from './pc_news_block';
 import PCImagesBlock from './pc_images_block';
 //product
 import PCProduct from './pc_product';
+//react
+import PCReactBlock from './pc_react';
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -31,18 +33,7 @@ export default class PCContainer extends React.Component{
     render() {
         return(
             <div>
-                <Row>
-                    <Col span={5}></Col>
-                    <Col span={14}>
-                                <Carousel autoplay>
-                                    <div><img src="./src/images/james.jpg" alt="photo1"/></div>
-                                    <div><img src="./src/images/huston.jpg" alt="photo1"/></div>
-                                    <div><img src="./src/images/lilard.jpg" alt="photo1"/></div>
-                                    <div><img src="./src/images/jordan.jpg" alt="photo1"/></div>
-                                </Carousel>
-                    </Col>
-                    <Col span={5}></Col>
-                </Row>
+
                 <Row>
                     <Col span={2}></Col>
                     <Col span={20} className="container">
@@ -58,24 +49,23 @@ export default class PCContainer extends React.Component{
                                 <PCImagesBlock count={6} type="guoji" width="400px" cardTitle="国际头条" imagesWidth="106px"/>
                         </div>
 
+                        <PCNewsBlock  cardTitle="头条"  count={24} type="top" />
 
-                        <Tabs className="tabs_news">
-                            <TabPane key="1" tab="新闻">
-                                <PCNewsBlock count={20} type="top" width="100%" bordered="false"/>
-                            </TabPane>
-                            <TabPane key="2" tab="娱乐">
-                                <PCNewsBlock count={22} type="yule" width="100%" bordered="false"/>
-                            </TabPane>
-                            <TabPane key="3" tab="科技">
-                                <PCNewsBlock count={31} type="keji" width="100%" bordered="false"/>
-                            </TabPane>
-                        </Tabs>
+                        {/*<Tabs className="tabs_news">*/}
+                            {/*<TabPane key="1" tab="新闻">*/}
+                                {/*<PCNewsBlock count={20} type="top" width="100%" bordered="false"/>*/}
+                            {/*</TabPane>*/}
+                            {/*<TabPane key="2" tab="娱乐">*/}
+                                {/*<PCNewsBlock count={22} type="yule" width="100%" bordered="false"/>*/}
+                            {/*</TabPane>*/}
+                            {/*<TabPane key="3" tab="科技">*/}
+                                {/*<PCNewsBlock count={31} type="keji" width="100%" bordered="false"/>*/}
+                            {/*</TabPane>*/}
+                        {/*</Tabs>*/}
 
-                        　<Tabs>
-                             <TabPane tab="产品" key="4">
-                                 <PCProduct/>
-                             </TabPane>
-                         </Tabs>
+                        <PCReactBlock cardTitle="React"/>
+
+                        　
 
 
                         <div>

@@ -15,7 +15,8 @@ export default class PCImagesBlock extends React.Component {
         }
     }
 
-    componentWillMount() {
+
+    componentDidMount() {
         let fetchOption = {
             method: 'GET'
         };
@@ -70,7 +71,7 @@ export default class PCImagesBlock extends React.Component {
 
 
         return (
-            <div className="topNewsList clearfix">
+            <div className="topBlockList clearfix">
                 <Card title={this.props.cardTitle} bordered={true} style={{width: this.props.width}}>
                     <ul>
                         {newsList}

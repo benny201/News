@@ -5,8 +5,8 @@ var APP_PATH = path.resolve(ROOT_PATH, 'src'); //__dirname 中的src目录，以
 
 module.exports = {
     context: __dirname + '/src',
-    // entry: "./js/index.js",
     entry: [
+        // 'webpack-dev-server/client?http://localhost:8080/',
         './js/root.js'
     ],
     module: {
@@ -21,7 +21,6 @@ module.exports = {
         },
             {
                 test: /\.css$/,
-                //loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
                 loader: 'style-loader!css-loader'
 
             },
@@ -29,11 +28,11 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['', '.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
+        extensions: ['.js', '.jsx', '.less', '.scss', '.css'], //后缀名自动补全
     },
     output: {
         path: __dirname + "/src/",
-        publicPath:"https://benny201.github.io/News/",
+        publicPath:'https://benny201.github.io/News/',
         filename: "bundle.js"
     }
 };
