@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row, Col} from 'antd';
-import { Router, Route, Link } from 'react-router'
+import { Link } from 'react-router'
 import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'antd';
 import 'whatwg-fetch'
 var headerCss = require('../../css/pc.css');

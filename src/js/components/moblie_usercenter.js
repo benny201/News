@@ -7,8 +7,7 @@
 import React from 'react';
 import { Card } from 'antd';
 import {Row, Col} from 'antd';
-import { Tabs,Input, Form, Button,notification} from 'antd';
-import { Router, Route, Link } from 'react-router';
+import { Tabs,Form} from 'antd';
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
 

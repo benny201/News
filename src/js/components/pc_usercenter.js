@@ -4,8 +4,7 @@
 import React from 'react';
 import {Card} from 'antd';
 import {Row, Col} from 'antd';
-import {Tabs, Input, Form, Button, notification, Upload, Icon, message, Modal} from 'antd';
-import {Router, Route, Link} from 'react-router';
+import {Tabs, Input, Form, Upload, Icon, message, Modal} from 'antd';
 import PCHeader from './pc_header';
 import PCFooter from './pc_footer';
 

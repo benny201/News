@@ -7,7 +7,7 @@ import MobileHeader from './mobile_header'
 import MobileFooter from './mobile_footer'
 import MobileList from './mobile_list'
 import { Carousel } from 'antd';
-import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'antd';
+import {Tabs} from 'antd';
 
 const TabPane = Tabs.TabPane;
 

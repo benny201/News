@@ -15,17 +15,7 @@ export default class PCReactBlock extends React.Component {
         }
     }
 
-    componentWillMount() {
-        let fetchOption = {
-            method: 'GET'
-        };
 
-        fetch("http://newsapi.gugujiankong.com/Handler.ashx?action=getnews&type=" + this.props.type + "&count=" + this.props.count, fetchOption).
-        then(response => response.json()).
-        then(json => this.setState({
-            news: json
-        }));
-    }
 
 
 
