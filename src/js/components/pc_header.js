@@ -211,7 +211,7 @@ class PCHeader extends React.Component {
                                             )}
 
                                         </FormItem>
-                                        <Button type="primary" htmlType="submit">登录</Button>
+                                        <Button htmlType="submit">登录</Button>
                                     </Form>
 
 
