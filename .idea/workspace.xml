@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52e9b788-36bb-4f06-948c-35bd96dbe737" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bundle.js" afterPath="$PROJECT_DIR$/src/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/components/pc_header.js" afterPath="$PROJECT_DIR$/src/js/components/pc_header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/components/comment.js" afterPath="$PROJECT_DIR$/src/js/components/comment.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -86,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pc_header.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pc_header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="256" column="76" lean-forward="false" selection-start-line="256" selection-start-column="70" selection-end-line="256" selection-end-column="76" />
+            <state relative-caret-position="560">
+              <caret line="247" column="47" lean-forward="true" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -98,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="comment.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/components/comment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+            <state relative-caret-position="380">
+              <caret line="82" column="29" lean-forward="true" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -153,8 +153,8 @@
       <find>styleH3</find>
       <find>params</find>
       <find>Button</find>
-      <find>type</find>
       <find>button</find>
+      <find>type</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/js/components/mobile_list.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_detail.js" />
         <option value="$PROJECT_DIR$/src/js/components/mobile_detail.js" />
-        <option value="$PROJECT_DIR$/src/js/components/comment.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_product.js" />
         <option value="$PROJECT_DIR$/src/js/bmob/bmob.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_footer.js" />
@@ -204,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/js/components/pc_react.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_index.js" />
         <option value="$PROJECT_DIR$/src/js/components/pc_header.js" />
+        <option value="$PROJECT_DIR$/src/js/components/comment.js" />
       </list>
     </option>
   </component>
@@ -422,12 +422,12 @@
       <workItem from="1489340653406" duration="12920000" />
       <workItem from="1489470278451" duration="835000" />
       <workItem from="1491208034987" duration="806000" />
-      <workItem from="1491605684363" duration="2068000" />
+      <workItem from="1491605684363" duration="2239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149089000" />
+    <option name="totallyTimeSpent" value="149260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1436" height="877" extended-state="6" />
@@ -668,14 +668,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/components/comment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="38" column="25" lean-forward="true" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/components/pc_react.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -728,11 +720,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/components/pc_header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="256" column="76" lean-forward="false" selection-start-line="256" selection-start-column="70" selection-end-line="256" selection-end-column="76" />
+        <state relative-caret-position="560">
+          <caret line="247" column="47" lean-forward="true" selection-start-line="247" selection-start-column="47" selection-end-line="247" selection-end-column="47" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/components/comment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="82" column="29" lean-forward="true" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

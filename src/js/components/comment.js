@@ -90,9 +90,9 @@ class Comment extends React.Component {
                                     <Input  type="textarea" placeholder="输入评论"/>
                                 )}
                             </FormItem>
-                            <Button type="primary" htmlType="submit">提交评论</Button>
+                            <Button  htmlType="submit">提交评论</Button>
                             &nbsp;&nbsp;
-                            <Button type="primary" htmlType="button" onClick={this.collect.bind(this)}>收藏</Button>
+                            <Button  htmlType="button" onClick={this.collect.bind(this)}>收藏</Button>
                         </Form>
 
                     </Col>
