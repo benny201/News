@@ -119,13 +119,13 @@ class PCHeader extends React.Component {
         let {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogin ?
                 <Menu.Item key="login" className="register">
-                    <Button type="dashed">{this.state.userNickName} </Button>
+                    <Button >{this.state.userNickName}</Button>
 
                     <Link target="_blank" className="register clearfix" to={'/usercenter'}>
-                        <Button type="primary" htmlType="button">个人中心</Button>
+                        <Button  htmlType="button">个人中心</Button>
                     </Link>
 
-                    <Button type="danger" htmlType="button" onClick={this.logout.bind(this)}>登出</Button>
+                    <Button  htmlType="button" onClick={this.logout.bind(this)}>登出</Button>
                 </Menu.Item>
                 :
                 <Menu.Item key="register" className="register">
@@ -254,7 +254,7 @@ class PCHeader extends React.Component {
                                                        placeholder="Password again"/>
                                             )}
                                         </FormItem>
-                                        <Button type="primary" htmlType="submit">注册</Button>
+                                        <Button htmlType="submit">注册</Button>
                                     </Form>
                                 </TabPane>
                             </Tabs>
