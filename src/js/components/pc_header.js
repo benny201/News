@@ -4,7 +4,6 @@ import { Link } from 'react-router'
 import {Menu, Icon, Tabs, Modal, message, Input, Form, Button, Checkbox} from 'antd';
 import 'whatwg-fetch'
 var headerCss = require('../../css/pc.css');
-// var Bmob = require('../../js/bmob/bmob.js');
 
 const FormItem = Form.Item;
 const TabPane = Tabs.TabPane;
@@ -120,13 +119,13 @@ class PCHeader extends React.Component {
         let {getFieldDecorator} = this.props.form;
         const userShow = this.state.hasLogin ?
                 <Menu.Item key="login" className="register">
-                    {/*<Button type="dashed">{this.state.userNickName} </Button>*/}
+                    <Button type="dashed">{this.state.userNickName} </Button>
 
                     <Link target="_blank" className="register clearfix" to={'/usercenter'}>
                         <Button type="primary" htmlType="button">个人中心</Button>
                     </Link>
 
-                    {/*<Button type="danger" htmlType="button" onClick={this.logout.bind(this)}>登出</Button>*/}
+                    <Button type="danger" htmlType="button" onClick={this.logout.bind(this)}>登出</Button>
                 </Menu.Item>
                 :
                 <Menu.Item key="register" className="register">
