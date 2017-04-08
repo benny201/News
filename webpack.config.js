@@ -31,7 +31,8 @@ module.exports = {
     },
     output: {
         path: __dirname + "/src/",
-        publicPath:'https://benny201.github.io/News/',
+        // publicPath:'https://benny201.github.io/News/',
+        publicPath:'http://zhibinwu.com.s3-website-ap-southeast-1.amazonaws.com',
         filename: "bundle.js"
     }
 };

@@ -1,6 +1,8 @@
 body {
-    background-image: url("http://file06.16sucai.com/2016/0825/0d40350bfe9dc80c2231e554016ca905.jpg");
+    /*background-image: url("http://file06.16sucai.com/2016/0825/0d40350bfe9dc80c2231e554016ca905.jpg");*/
+    background-color: #ECF0F1;
 }
+
 
 .logo {
     align-items: center;
